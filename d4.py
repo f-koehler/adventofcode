@@ -9,5 +9,12 @@ if __name__ == "__main__":
         digest = hashlib.md5((secret+str(num)).encode()).hexdigest()
         if digest[0:5] == "00000":
             print(num)
-            exit(0)
+            break
+        num += 1
+    num = 1
+    while True:
+        digest = hashlib.md5((secret+str(num)).encode()).hexdigest()
+        if digest[0:6] == "000000":
+            print(num)
+            break
         num += 1
