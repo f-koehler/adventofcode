@@ -45,7 +45,7 @@ def nice_word2(word):
 
 
 if __name__ == "__main__":
-    with open("d5.txt") as f:
+    with open("d05.txt") as f:
         words = f.read().splitlines()
     print(sum(1 for w in words if nice_word(w)))
     print(sum(1 for w in words if nice_word2(w)))

@@ -14,7 +14,7 @@ def gift_ribbon(l, w, h):
     return ribbon
 
 if __name__ == "__main__":
-    with open("d2.txt") as f:
+    with open("d02.txt") as f:
         lines = f.readlines()
     gifts = []
     for l in lines:

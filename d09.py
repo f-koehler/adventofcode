@@ -5,7 +5,7 @@ import re
 
 if __name__ == "__main__":
     regex = re.compile(r"^(?P<from>\w+) to (?P<to>\w+) = (?P<dist>\d+)$")
-    with open("d9.txt") as f:
+    with open("d09.txt") as f:
         lines = f.read().splitlines()
 
     locations = []

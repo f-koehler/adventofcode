@@ -2,7 +2,7 @@
 import hashlib
 
 if __name__ == "__main__":
-    with open("d4.txt") as f:
+    with open("d04.txt") as f:
         secret = f.read().strip()
     num = 1
     while True:

@@ -6,7 +6,7 @@ gate_map = dict()
 
 def read_gate_map():
     gate_map.clear()
-    with open("d7.txt") as f:
+    with open("d07.txt") as f:
         gates = f.read().splitlines()
 
     for gate in gates:

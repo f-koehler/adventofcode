@@ -6,7 +6,7 @@ if __name__ == "__main__":
     visited[0] = [0]
     num_visited = 1
 
-    with open("d3.txt") as f:
+    with open("d03.txt") as f:
         commands = f.read().strip()
 
     for cmd in commands:

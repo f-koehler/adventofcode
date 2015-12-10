@@ -6,7 +6,7 @@ def part1():
     for x in range(0, 1000):
         lights.append([False for y in range(0, 1000)])
     regex = re.compile(r"^(?P<command>turn\son|turn\soff|toggle)\s(?P<x1>\d+),(?P<y1>\d+)\s+through\s+(?P<x2>\d+),(?P<y2>\d+)$")
-    with open("d6.txt") as f:
+    with open("d06.txt") as f:
         commands = f.read().splitlines()
     for cmd in commands:
         m = regex.match(cmd)
@@ -40,7 +40,7 @@ def part2():
     for x in range(0, 1000):
         lights.append([0 for y in range(0, 1000)])
     regex = re.compile(r"^(?P<command>turn\son|turn\soff|toggle)\s(?P<x1>\d+),(?P<y1>\d+)\s+through\s+(?P<x2>\d+),(?P<y2>\d+)$")
-    with open("d6.txt") as f:
+    with open("d06.txt") as f:
         commands = f.read().splitlines()
     for cmd in commands:
         m = regex.match(cmd)

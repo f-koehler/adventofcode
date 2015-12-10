@@ -24,7 +24,7 @@ def escaped_length(literal):
     return len(literal)
 
 if __name__ == "__main__":
-    with open("d8.txt") as f:
+    with open("d08.txt") as f:
         literals = f.read().splitlines()
 
     lit = 0
