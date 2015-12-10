@@ -4,6 +4,29 @@ import re
 
 gate_map = dict()
 
+def read_gate_map():
+    gate_map.clear()
+    with open("d7.txt") as f:
+        gates = f.read().splitlines()
+
+    for gate in gates:
+        m = re_set.match(gate)
+        if m:
+            d = m.groupdict()
+            gate_map[d["out"]] = ["set", d["in"], None]
+            continue
+
+        m = re_not.match(gate)
+        if m:
+            d = m.groupdict()
+            gate_map[d["out"]] = ["not", d["in"], None]
+            continue
+
+        m = re_bin.match(gate)
+        if m:
+            d = m.groupdict()
+            gate_map[d["out"]] = [d["op"].lower(), d["in1"], d["in2"]]
+
 
 def evaluate(output):
     input1 = gate_map[output][1]
@@ -42,25 +65,10 @@ if __name__ == "__main__":
     re_not = re.compile(r"^NOT (?P<in>[a-z]+|\d+) -> (?P<out>[a-z]+)$")
     re_bin = re.compile(r"^(?P<in1>[a-z]+|\d+) (?P<op>AND|OR|LSHIFT|RSHIFT) (?P<in2>[a-z]+|\d+) -> (?P<out>[a-z]+)$")
 
-    with open("d7.txt") as f:
-        gates = f.read().splitlines()
+    read_gate_map()
+    part1 = evaluate("a")
+    print(part1)
 
-    for gate in gates:
-        m = re_set.match(gate)
-        if m:
-            d = m.groupdict()
-            gate_map[d["out"]] = ["set", d["in"], None]
-            continue
-
-        m = re_not.match(gate)
-        if m:
-            d = m.groupdict()
-            gate_map[d["out"]] = ["not", d["in"], None]
-            continue
-
-        m = re_bin.match(gate)
-        if m:
-            d = m.groupdict()
-            gate_map[d["out"]] = [d["op"].lower(), d["in1"], d["in2"]]
-
+    read_gate_map()
+    gate_map["b"] = ["set", str(part1), None]
     print(evaluate("a"))
