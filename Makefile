@@ -1,7 +1,7 @@
 RESULTS:=$(patsubst %.py,%.result,$(wildcard *.py))
 
 all: ${RESULTS}
-%.result: %.py
+%.result: %.py %.txt
 	./$< > $@
 
 .PHONY: clean
