@@ -22,6 +22,7 @@ for r in replacements:
 print(len(molecules))
 
 
+# this will not definitely return the way with the fewest steps rather than the first that is found
 count = 0
 cur_string = start
 while cur_string != "e":
